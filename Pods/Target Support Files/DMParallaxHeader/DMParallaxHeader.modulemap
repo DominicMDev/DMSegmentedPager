@@ -1,0 +1,6 @@
+framework module DMParallaxHeader {
+  umbrella header "DMParallaxHeader-umbrella.h"
+
+  export *
+  module * { export * }
+}

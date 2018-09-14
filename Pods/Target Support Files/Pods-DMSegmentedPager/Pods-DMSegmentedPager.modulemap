@@ -1,0 +1,6 @@
+framework module Pods_DMSegmentedPager {
+  umbrella header "Pods-DMSegmentedPager-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module DMPagerView {
+  umbrella header "DMPagerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
