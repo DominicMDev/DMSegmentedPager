@@ -14,7 +14,8 @@ import DMSegmentedControl
 public enum DMSegmentedControlPosition: Int {
     case top, bottom, topOver
 }
-public class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate, DMPagerViewDataSource {
+
+open class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate, DMPagerViewDataSource {
     
     var _contentView: DMScrollView!
     var _segmentedControl: DMSegmentedControl!
@@ -92,7 +93,7 @@ public class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate
      * MARK: - Layout
      */
     
-    public override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         if count <= 0 { reloadData() }
         layoutContentView()
@@ -237,32 +238,32 @@ public class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate
  * MARK: - Delegates
  */
 
-public extension DMSegmentedPager {
+extension DMSegmentedPager {
     
     // MARK: - DMPagerViewDelegate
     
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView === contentView, let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPager(_:didScrollWith:))) {
             delegate.segmentedPager!(self, didScrollWith: scrollView.parallaxHeader)
         }
     }
     
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView === contentView, let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPager(_:didEndDraggingWith:))) {
             delegate.segmentedPager!(self, didEndDraggingWith: scrollView.parallaxHeader)
         }
     }
     
-    public func scrollView(_ scrollView: DMScrollView, shouldScrollWithSubView subView: UIScrollView) -> Bool {
+    open func scrollView(_ scrollView: DMScrollView, shouldScrollWithSubView subView: UIScrollView) -> Bool {
         if subView === pager { return false }
         guard let page = pager.selectedPage as? DMPageProtocol,
             page.responds(to: #selector(DMPageProtocol.segmentedPager(_:shouldScrollWith:))) else { return true }
         return page.segmentedPager!(self, shouldScrollWith: subView)
     }
     
-    public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+    open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         if let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPagerShouldScrollToTop(_:))) {
             return delegate.segmentedPagerShouldScrollToTop!(self)
@@ -272,7 +273,7 @@ public extension DMSegmentedPager {
     
     // MARK: - DMPagerViewDelegate
     
-    public func pagerView(_ pagerView: DMPagerView, willMoveToPage page: UIView, at index: Int) {
+    open func pagerView(_ pagerView: DMPagerView, willMoveToPage page: UIView, at index: Int) {
         segmentedControl.setSelectedSegmentIndex(index, animated: true)
         if let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPager(_:willMoveToPage:at:))) {
@@ -280,7 +281,7 @@ public extension DMSegmentedPager {
         }
     }
     
-    public func pagerView(_ pagerView: DMPagerView, didMoveToPage page: UIView, at index: Int) {
+    open func pagerView(_ pagerView: DMPagerView, didMoveToPage page: UIView, at index: Int) {
         segmentedControl.setSelectedSegmentIndex(index, animated: false)
         changedToIndex(index)
         if let delegate = delegate,
@@ -307,14 +308,14 @@ public extension DMSegmentedPager {
         }
     }
     
-    public func pagerView(_ pagerView: DMPagerView, willDisplayPage page: UIView, at index: Int) {
+    open func pagerView(_ pagerView: DMPagerView, willDisplayPage page: UIView, at index: Int) {
         if let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPager(_:willDisplayPage:at:))) {
             delegate.segmentedPager!(self, willDisplayPage: page, at: index)
         }
     }
     
-    public func pagerView(_ pagerView: DMPagerView, didEndDisplayingPage page: UIView, at index: Int) {
+    open func pagerView(_ pagerView: DMPagerView, didEndDisplayingPage page: UIView, at index: Int) {
         if let delegate = delegate,
             delegate.responds(to: #selector(DMSegmentedPagerDelegate.segmentedPager(_:didEndDisplayingPage:at:))) {
             delegate.segmentedPager!(self, didEndDisplayingPage: page, at: index)
@@ -323,11 +324,11 @@ public extension DMSegmentedPager {
     
     // MARK: - DMPagerViewDataSource
     
-    public func numberOfPages(in pagerView: DMPagerView) -> Int {
+    open func numberOfPages(in pagerView: DMPagerView) -> Int {
         return count
     }
     
-    public func pagerView(_ pagerView: DMPagerView, viewForPageAt index: Int) -> UIView {
+    open func pagerView(_ pagerView: DMPagerView, viewForPageAt index: Int) -> UIView {
         return dataSource?.segmentedPager(self, viewForPageAt: index) ?? UIView(frame: .zero)
     }
     
