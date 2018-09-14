@@ -10,21 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pages-->
+        <!--View Controller-->
         <scene sceneID="rbB-Kx-VpS">
             <objects>
                 <viewController id="eyw-4y-S5U" customClass="DMViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DZ9-RA-FNZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="mSo-E3-icO"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eHW-pq-MEE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="61k-Vv-GuV"/>
+                        <viewLayoutGuide key="safeArea" id="HqD-jA-tfs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pages" id="qEJ-J0-ytX"/>
                     <connections>
                         <outlet property="headerView" destination="A5W-4m-ofU" id="sws-kk-J4X"/>
                         <segue destination="LfA-OG-yd7" kind="custom" identifier="dm_page_0" customClass="DMPageSegue" customModule="DMPagerView" id="vnU-w3-Qb1"/>
@@ -37,18 +32,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success-baby" translatesAutoresizingMaskIntoConstraints="NO" id="BSO-p1-5nQ" userLabel="Image">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="success-baby" translatesAutoresizingMaskIntoConstraints="NO" id="BSO-p1-5nQ" userLabel="Image">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="BSO-p1-5nQ" firstAttribute="top" secondItem="A5W-4m-ofU" secondAttribute="top" id="OsY-3T-O1m"/>
-                        <constraint firstAttribute="bottom" secondItem="BSO-p1-5nQ" secondAttribute="bottom" id="c3q-LW-BsQ"/>
-                        <constraint firstAttribute="trailing" secondItem="BSO-p1-5nQ" secondAttribute="trailing" id="qNh-01-nPM"/>
-                        <constraint firstItem="BSO-p1-5nQ" firstAttribute="leading" secondItem="A5W-4m-ofU" secondAttribute="leading" id="yYB-Ie-UFh"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="WeO-6R-Z8D"/>
+                    <viewLayoutGuide key="safeArea" id="Ugg-bl-BTE"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="578" y="355"/>
@@ -88,22 +78,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1U-58-rSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="-1009"/>
+            <point key="canvasLocation" x="1364" y="-1009.0000000000001"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="Sx3-zf-xTa">
             <objects>
                 <viewController id="Izd-QT-asy" customClass="DMWebViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YgR-vg-Wcu"/>
-                        <viewControllerLayoutGuide type="bottom" id="jVR-Y3-Zck"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XXb-RV-ZxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-36-MHQ">
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-36-MHQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -112,13 +99,7 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="BZM-36-MHQ" firstAttribute="top" secondItem="XXb-RV-ZxW" secondAttribute="top" id="af4-Ch-gjf"/>
-                            <constraint firstItem="BZM-36-MHQ" firstAttribute="leading" secondItem="XXb-RV-ZxW" secondAttribute="leading" id="dtU-u8-0Bx"/>
-                            <constraint firstItem="BZM-36-MHQ" firstAttribute="bottom" secondItem="jVR-Y3-Zck" secondAttribute="top" id="iUh-oI-aJ4"/>
-                            <constraint firstAttribute="trailing" secondItem="BZM-36-MHQ" secondAttribute="trailing" id="nJZ-7Q-8x0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QU7-gz-59v"/>
+                        <viewLayoutGuide key="safeArea" id="0Xl-y1-vAP"/>
                     </view>
                     <connections>
                         <outlet property="webView" destination="BZM-36-MHQ" id="clr-ZL-NkR"/>
@@ -132,28 +113,19 @@
         <scene sceneID="8ga-KP-3wS">
             <objects>
                 <viewController id="rbs-oC-YmG" customClass="DMTextViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="33t-U1-cMS"/>
-                        <viewControllerLayoutGuide type="bottom" id="bTm-2M-7Yl"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="luM-0i-uch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iah-pW-QdR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iah-pW-QdR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="iah-pW-QdR" firstAttribute="top" secondItem="luM-0i-uch" secondAttribute="top" id="9q0-vi-wjs"/>
-                            <constraint firstAttribute="trailing" secondItem="iah-pW-QdR" secondAttribute="trailing" id="G4Q-Yf-S91"/>
-                            <constraint firstItem="iah-pW-QdR" firstAttribute="leading" secondItem="luM-0i-uch" secondAttribute="leading" id="kQB-F7-ceA"/>
-                            <constraint firstItem="iah-pW-QdR" firstAttribute="bottom" secondItem="bTm-2M-7Yl" secondAttribute="top" id="t3d-wx-Eba"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="5Rh-1H-2uF"/>
+                        <viewLayoutGuide key="safeArea" id="vie-T7-8pW"/>
                     </view>
                     <connections>
                         <outlet property="textView" destination="iah-pW-QdR" id="3tt-RZ-bsX"/>
