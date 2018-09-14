@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -103,7 +103,7 @@
 		2E1D2270884CC1D318D7EF087347E825 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = DMParallaxHeader/Extensions.swift; sourceTree = "<group>"; };
 		2E70BCC401C1164AE28C151CE5FE5B5B /* DMPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMPagerView.swift; path = DMPagerView/DMPagerView.swift; sourceTree = "<group>"; };
 		2EF876293F39B55B58B510EF63BE8A2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D7406DDB72811755DDC2A64280502C6 /* DMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7406DDB72811755DDC2A64280502C6 /* DMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DMSegmentedControl.framework; path = DMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5F56F26B4CD0609CC6B3D2498040B5 /* Pods-DMSegmentedPager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DMSegmentedPager.modulemap"; sourceTree = "<group>"; };
 		41D844C496411FB1EE879F9A5488AD62 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = DMPagerView/Extensions.swift; sourceTree = "<group>"; };
 		4265B7FA26F68D40B9B2D716E00FFEAC /* DMPagerView+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DMPagerView+UIScrollViewDelegate.swift"; path = "DMPagerView/DMPagerView+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
@@ -120,16 +120,16 @@
 		85DDCB31EEFC00DAC362509348BC867D /* DMSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMSegmentedControl.swift; path = DMSegmentedControl/DMSegmentedControl.swift; sourceTree = "<group>"; };
 		8B80053EB5ED558A85A2FB45316036AF /* Pods-DMSegmentedPagerExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DMSegmentedPagerExample-dummy.m"; sourceTree = "<group>"; };
 		8E9EFD117054C7093C46A6C234A1C73A /* DMSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DMSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94706A62D159A4F8D3837B3F2CF7A951 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94895F1B14C36D5CD5DF387888A3BCB1 /* Pods-DMSegmentedPagerExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DMSegmentedPagerExample-frameworks.sh"; sourceTree = "<group>"; };
 		972C5685C0EA1B869EADAF8AE34E9BBB /* DMPagerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DMPagerView-umbrella.h"; sourceTree = "<group>"; };
 		9A6F21AF70458A718F4029910D98D9E3 /* Pods-DMSegmentedPagerExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DMSegmentedPagerExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		9B198AB4B1DA2B7AC720CAADA30C0751 /* Pods_DMSegmentedPagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMSegmentedPagerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B198AB4B1DA2B7AC720CAADA30C0751 /* Pods_DMSegmentedPagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DMSegmentedPagerExample.framework; path = "Pods-DMSegmentedPagerExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB928739892DC050D1C8A299FCAF7A8 /* Pods-DMSegmentedPager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DMSegmentedPager.release.xcconfig"; sourceTree = "<group>"; };
 		9CF13BCB9D36F1319E01CAB18FE2FBA7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A3577FDE29B6EBF8F934AD8CD28D2D5E /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = DMSegmentedControl/Extensions.swift; sourceTree = "<group>"; };
-		A75E43E60081B0B87B176D5C7E66FA66 /* DMPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75E43E60081B0B87B176D5C7E66FA66 /* DMPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DMPagerView.framework; path = DMPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07890E15D02434167EFA3A7EC6E9232 /* DMSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DMSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
 		B47D166616A83E753620C3AE1F1000B9 /* DMParallaxHeader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DMParallaxHeader.xcconfig; sourceTree = "<group>"; };
 		B6522ECF5C5C554EDB568489F94EC859 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,10 +144,10 @@
 		DCDE2DF80B91AF5B276B9E5A59E609D9 /* DMParallaxHeaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMParallaxHeaderDelegate.swift; path = DMParallaxHeader/DMParallaxHeaderDelegate.swift; sourceTree = "<group>"; };
 		DDC28AA57165520C153FC38DAABD390E /* Enums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = DMSegmentedControl/Enums.swift; sourceTree = "<group>"; };
 		DEF377DA79F52D4B49D0E87F166B576E /* Pods-DMSegmentedPager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DMSegmentedPager-umbrella.h"; sourceTree = "<group>"; };
-		E229D49595C38F00BCE198DE10E9D6CE /* Pods_DMSegmentedPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMSegmentedPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E229D49595C38F00BCE198DE10E9D6CE /* Pods_DMSegmentedPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DMSegmentedPager.framework; path = "Pods-DMSegmentedPager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58CADDA57F0CDFA7146B150DBBEFA2B /* DMParallaxHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMParallaxHeader.swift; path = DMParallaxHeader/DMParallaxHeader.swift; sourceTree = "<group>"; };
 		F08DF069FD0B54F73A35622FD3889506 /* DMPagerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DMPagerView.xcconfig; sourceTree = "<group>"; };
-		F12115ED135D036878BDBA7B4D1997F7 /* DMParallaxHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DMParallaxHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12115ED135D036878BDBA7B4D1997F7 /* DMParallaxHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DMParallaxHeader.framework; path = DMParallaxHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2CEE8C8BC003BADF7AF549E594110D0 /* DMPagerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DMPagerView-dummy.m"; sourceTree = "<group>"; };
 		F3FEE4A7D6428B3A1CBCFFF02C9B0A2F /* DMParallaxHeader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DMParallaxHeader-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +209,7 @@
 				41D844C496411FB1EE879F9A5488AD62 /* Extensions.swift */,
 				C7300C5439E98B7C2881CAF1AEA8D22A /* Support Files */,
 			);
+			name = DMPagerView;
 			path = DMPagerView;
 			sourceTree = "<group>";
 		};
@@ -278,6 +279,7 @@
 				2E1D2270884CC1D318D7EF087347E825 /* Extensions.swift */,
 				1B65CCD96C1B6C6C63C11BB65A1FDBAA /* Support Files */,
 			);
+			name = DMParallaxHeader;
 			path = DMParallaxHeader;
 			sourceTree = "<group>";
 		};
@@ -312,6 +314,7 @@
 				A3577FDE29B6EBF8F934AD8CD28D2D5E /* Extensions.swift */,
 				3E6AAE101CFC7BB36E99CE1F50A2E444 /* Support Files */,
 			);
+			name = DMSegmentedControl;
 			path = DMSegmentedControl;
 			sourceTree = "<group>";
 		};
@@ -518,7 +521,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -659,7 +662,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMPagerView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMPagerView/DMPagerView.modulemap";
 				PRODUCT_MODULE_NAME = DMPagerView;
 				PRODUCT_NAME = DMPagerView;
@@ -692,7 +699,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-DMSegmentedPagerExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DMSegmentedPagerExample/Pods-DMSegmentedPagerExample.modulemap";
 				OTHER_LDFLAGS = "";
@@ -728,7 +739,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMSegmentedControl/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMSegmentedControl/DMSegmentedControl.modulemap";
 				PRODUCT_MODULE_NAME = DMSegmentedControl;
 				PRODUCT_NAME = DMSegmentedControl;
@@ -824,7 +839,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMParallaxHeader/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMParallaxHeader/DMParallaxHeader.modulemap";
 				PRODUCT_MODULE_NAME = DMParallaxHeader;
 				PRODUCT_NAME = DMParallaxHeader;
@@ -894,7 +913,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -917,7 +935,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-DMSegmentedPager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DMSegmentedPager/Pods-DMSegmentedPager.modulemap";
 				OTHER_LDFLAGS = "";
@@ -953,7 +975,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMPagerView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMPagerView/DMPagerView.modulemap";
 				PRODUCT_MODULE_NAME = DMPagerView;
 				PRODUCT_NAME = DMPagerView;
@@ -987,7 +1013,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-DMSegmentedPager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DMSegmentedPager/Pods-DMSegmentedPager.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1023,7 +1053,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMSegmentedControl/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMSegmentedControl/DMSegmentedControl.modulemap";
 				PRODUCT_MODULE_NAME = DMSegmentedControl;
 				PRODUCT_NAME = DMSegmentedControl;
@@ -1057,7 +1091,11 @@
 				INFOPLIST_FILE = "Target Support Files/DMParallaxHeader/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DMParallaxHeader/DMParallaxHeader.modulemap";
 				PRODUCT_MODULE_NAME = DMParallaxHeader;
 				PRODUCT_NAME = DMParallaxHeader;
@@ -1090,7 +1128,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-DMSegmentedPagerExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DMSegmentedPagerExample/Pods-DMSegmentedPagerExample.modulemap";
 				OTHER_LDFLAGS = "";

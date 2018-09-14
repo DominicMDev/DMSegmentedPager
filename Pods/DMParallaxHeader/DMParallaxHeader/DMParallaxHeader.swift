@@ -30,7 +30,7 @@ class DMParallaxView: UIView {
     }
 }
 
-@objc open class DMParallaxHeader: UIView {
+open class DMParallaxHeader: UIView {
     
     /*
      * MARK: - Instance Properties
@@ -73,7 +73,7 @@ class DMParallaxView: UIView {
     }
     
     /// The header's default height. 0 0 by default.
-    @IBInspectable open var height: CGFloat = 0 {
+    @IBInspectable public var height: CGFloat = 0 {
         didSet {
             if height != oldValue {
                 adjustScrollViewTopInset(scrollView.contentInset.top - oldValue + height)
@@ -84,7 +84,7 @@ class DMParallaxView: UIView {
     }
     
     /// The header's minimum height while scrolling up. 0 by default.
-    @IBInspectable open var minimumHeight: CGFloat = 0 {
+    @IBInspectable public var minimumHeight: CGFloat = 0 {
         didSet { layoutContentView() }
     }
     
@@ -105,14 +105,7 @@ class DMParallaxView: UIView {
             }
         }
     }
-    
-    override required public init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+
     
     /*
      * MARK: - Constraints

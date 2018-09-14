@@ -11,7 +11,7 @@ import ObjectiveC
 
 /// A DMPagerView lets the user navigate between pages of content.
 /// Navigation can be controlled programmatically by your app or directly by the user using gestures.
-public class DMPagerView: UIView, UIScrollViewDelegate {
+open class DMPagerView: UIView, UIScrollViewDelegate {
     
     /*
      *  MARK: - Instance Properties - Internal
@@ -111,7 +111,7 @@ public class DMPagerView: UIView, UIScrollViewDelegate {
      *  MARK: - View Life Cycle
      */
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         if count <= 0 { reloadData() }
         

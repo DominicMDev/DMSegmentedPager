@@ -40,7 +40,7 @@ class ScrollView: UIScrollView {
 public typealias IndexChangeBlock = ((_ index: Int) -> Void)
 public typealias DMTitleFormatterBlock = ((_ segmentedControl: DMSegmentedControl, _ title: String, _ index: Int, _ selected: Bool) -> NSAttributedString)
 
-public class DMSegmentedControl: UIControl {
+open class DMSegmentedControl: UIControl {
     
     private var selectionIndicatorStripLayer: CALayer!
     private var selectionIndicatorBoxLayer: CALayer!
@@ -233,7 +233,7 @@ public class DMSegmentedControl: UIControl {
         self.contentMode = .redraw
     }
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         self.segmentWidth = 0.0
     }
@@ -243,12 +243,12 @@ public class DMSegmentedControl: UIControl {
      * MARK: - View Life Cycle
      */
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         updateSegmentsRects()
     }
     
-    public override var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             updateSegmentsRects()
         }
@@ -286,7 +286,7 @@ public class DMSegmentedControl: UIControl {
         }
     }
     
-    public override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         backgroundColor?.setFill()
         UIRectFill(bounds)
         
@@ -787,7 +787,7 @@ public class DMSegmentedControl: UIControl {
     
     // MARK: - willMoveToSuperview
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         if newSuperview == nil { return super.willMove(toSuperview: newSuperview) }
         
         if !sectionTitles.isEmpty || !sectionImages.isEmpty {
@@ -797,7 +797,7 @@ public class DMSegmentedControl: UIControl {
     
     // MARK: - Touch
     
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let touchLocation = touch.location(in: self)
         

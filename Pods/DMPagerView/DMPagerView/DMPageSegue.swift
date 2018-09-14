@@ -14,7 +14,7 @@ import UIKit
 
 public let DMSeguePageIdentifierFormat = "dm_page_##"
 
-public class DMPageSegue: UIStoryboardSegue {
+open class DMPageSegue: UIStoryboardSegue {
     public typealias SourceViewController = UIViewController & DMPageSegueSource
     
     @objc dynamic public var sourceVC: SourceViewController {
@@ -32,7 +32,7 @@ public class DMPageSegue: UIStoryboardSegue {
         pageIndex = source.pageIndex
     }
     
-    public override func perform() {
+    override open func perform() {
         destination.willMove(toParentViewController: sourceVC)
         sourceVC.addChildViewController(destination)
         sourceVC.setPageViewController(destination, at: sourceVC.pageIndex)

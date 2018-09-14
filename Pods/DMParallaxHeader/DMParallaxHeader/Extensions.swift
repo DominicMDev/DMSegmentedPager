@@ -19,15 +19,11 @@ extension UIScrollView {
     
     static var ParallaxHeaderKey = "kDMParallaxHeader"
     
-    @objc open var parallaxHeaderType: DMParallaxHeader.Type {
-        return DMParallaxHeader.self
-    }
-    
     @objc public var parallaxHeader: DMParallaxHeader {
         get {
             var parallaxHeader = objc_getAssociatedObject(self, &UIScrollView.ParallaxHeaderKey) as? DMParallaxHeader
             if parallaxHeader == nil {
-                parallaxHeader = parallaxHeaderType.init(frame: .zero)
+                parallaxHeader = DMParallaxHeader(frame: .zero)
                 self.parallaxHeader = parallaxHeader!
             }
             return parallaxHeader!
@@ -40,7 +36,7 @@ extension UIScrollView {
     
 }
 
-public extension UIScrollViewDelegate {
+extension UIScrollViewDelegate {
     func scrollView(_ scrollView: DMScrollView, shouldScrollWithSubView subView: UIScrollView) -> Bool {
         return true
     }

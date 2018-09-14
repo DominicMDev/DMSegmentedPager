@@ -1,5 +1,5 @@
 //
-//  DMScrollView.swift
+//  DMParallaxScrollView.swift
 //  DMParallaxHeader
 //
 //  Created by Dominic on 9/10/18.
