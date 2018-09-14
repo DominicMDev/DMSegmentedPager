@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 s.name          = 'DMSegmentedPager'
 s.version       = '1.0.0'
-s.summary       = ''
+s.summary       = 'A Swift conversion of https://github.com/maxep/MXSegmentedPager'
 s.swift_version = '4.0'
 s.homepage      = 'https://github.com/DominicMDev/DMSegmentedPager'
 s.license       = { :type => 'MIT', :file => 'LICENSE.md' }

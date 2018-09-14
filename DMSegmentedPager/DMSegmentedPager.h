@@ -15,5 +15,6 @@ FOUNDATION_EXPORT double DMSegmentedPagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char DMSegmentedPagerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DMSegmentedPager/PublicHeader.h>
-
-
+#import <DMPagerView/DMPagerView-Swift.h>
+#import <DMParallaxHeader/DMParallaxHeader-Swift.h>
+#import <DMSegmentedControl/DMSegmentedControl-Swift.h>

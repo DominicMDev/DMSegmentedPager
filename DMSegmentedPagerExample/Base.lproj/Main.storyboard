@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eyw-4y-S5U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JWo-jl-wwQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="nal-aD-WND">
+            <objects>
+                <tabBarController id="JWo-jl-wwQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nxi-1b-wra">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bod-Rk-D4S" kind="relationship" relationship="viewControllers" id="dL7-zd-zjd"/>
+                        <segue destination="eyw-4y-S5U" kind="relationship" relationship="viewControllers" id="dWL-Vz-avw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Tv-bZ-bSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="-325"/>
+        </scene>
+        <!--Parallax-->
         <scene sceneID="rbB-Kx-VpS">
             <objects>
-                <viewController id="eyw-4y-S5U" customClass="DMViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eyw-4y-S5U" customClass="DMParallaxViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHW-pq-MEE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="HqD-jA-tfs"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Parallax" id="Hhs-DX-7vj">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="headerView" destination="A5W-4m-ofU" id="sws-kk-J4X"/>
                         <segue destination="LfA-OG-yd7" kind="custom" identifier="dm_page_0" customClass="DMPageSegue" customModule="DMPagerView" id="vnU-w3-Qb1"/>
@@ -32,12 +53,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="success-baby" translatesAutoresizingMaskIntoConstraints="NO" id="BSO-p1-5nQ" userLabel="Image">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success-baby" translatesAutoresizingMaskIntoConstraints="NO" id="BSO-p1-5nQ" userLabel="Image">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="BSO-p1-5nQ" firstAttribute="bottom" secondItem="Ugg-bl-BTE" secondAttribute="bottom" id="N3J-Ds-Pvb"/>
+                        <constraint firstItem="BSO-p1-5nQ" firstAttribute="leading" secondItem="Ugg-bl-BTE" secondAttribute="leading" id="OOf-3z-CrL"/>
+                        <constraint firstItem="Ugg-bl-BTE" firstAttribute="trailing" secondItem="BSO-p1-5nQ" secondAttribute="trailing" id="mLG-Es-iBT"/>
+                        <constraint firstItem="BSO-p1-5nQ" firstAttribute="top" secondItem="A5W-4m-ofU" secondAttribute="top" id="sCe-Vu-w7W"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="Ugg-bl-BTE"/>
                 </view>
             </objects>
@@ -80,6 +106,27 @@
             </objects>
             <point key="canvasLocation" x="1364" y="-1009.0000000000001"/>
         </scene>
+        <!--Simple-->
+        <scene sceneID="IHO-D5-0qt">
+            <objects>
+                <viewController id="bod-Rk-D4S" customClass="DMSimpleViewController" customModule="DMSegmentedPagerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CtK-IQ-hs3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XWB-12-KuI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Simple" id="7l4-wz-gcR"/>
+                    <connections>
+                        <segue destination="LfA-OG-yd7" kind="custom" identifier="dm_page_0" customClass="DMPageSegue" customModule="DMPagerView" id="Dfd-AO-C6o"/>
+                        <segue destination="Izd-QT-asy" kind="custom" identifier="dm_page_1" customClass="DMPageSegue" customModule="DMPagerView" id="a8r-bz-Q0Q"/>
+                        <segue destination="rbs-oC-YmG" kind="custom" identifier="dm_page_2" customClass="DMPageSegue" customModule="DMPagerView" id="T8i-oG-4VG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjK-bM-DEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="-1010"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="Sx3-zf-xTa">
             <objects>
@@ -88,9 +135,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-36-MHQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-36-MHQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -99,6 +145,12 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BZM-36-MHQ" firstAttribute="trailing" secondItem="0Xl-y1-vAP" secondAttribute="trailing" id="Dpl-Yc-r0D"/>
+                            <constraint firstItem="BZM-36-MHQ" firstAttribute="leading" secondItem="0Xl-y1-vAP" secondAttribute="leading" id="FvF-9S-QQ9"/>
+                            <constraint firstItem="BZM-36-MHQ" firstAttribute="top" secondItem="0Xl-y1-vAP" secondAttribute="top" id="H3b-WY-mcj"/>
+                            <constraint firstItem="BZM-36-MHQ" firstAttribute="bottom" secondItem="0Xl-y1-vAP" secondAttribute="bottom" id="RhA-FH-NDB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Xl-y1-vAP"/>
                     </view>
                     <connections>
@@ -117,14 +169,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iah-pW-QdR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iah-pW-QdR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iah-pW-QdR" firstAttribute="leading" secondItem="vie-T7-8pW" secondAttribute="leading" id="8o0-m6-elS"/>
+                            <constraint firstItem="iah-pW-QdR" firstAttribute="trailing" secondItem="vie-T7-8pW" secondAttribute="trailing" id="aod-Qi-kXX"/>
+                            <constraint firstItem="iah-pW-QdR" firstAttribute="bottom" secondItem="vie-T7-8pW" secondAttribute="bottom" id="di4-1K-Vu2"/>
+                            <constraint firstItem="iah-pW-QdR" firstAttribute="top" secondItem="vie-T7-8pW" secondAttribute="top" id="kiO-Ak-xwk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vie-T7-8pW"/>
                     </view>
                     <connections>
@@ -139,4 +196,9 @@
     <resources>
         <image name="success-baby" width="640" height="425"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="T8i-oG-4VG"/>
+        <segue reference="a8r-bz-Q0Q"/>
+        <segue reference="Dfd-AO-C6o"/>
+    </inferredMetricsTieBreakers>
 </document>

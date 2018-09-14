@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A4B11EFDE7CF728B1A73C13 /* Pods_DMSegmentedPager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14730506068A09C6ADF31CB8 /* Pods_DMSegmentedPager.framework */; };
 		351FC5DC249D7F56C06DE964 /* Pods_DMSegmentedPagerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF9E6D7D6C30E084D78D23D /* Pods_DMSegmentedPagerExample.framework */; };
-		8091C835214B2B02006DDD75 /* DMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091C831214B2B01006DDD75 /* DMViewController.swift */; };
+		800483F2214C504D00D4C0BB /* DMSimpleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800483F1214C504D00D4C0BB /* DMSimpleController.swift */; };
+		800483F4214C52F200D4C0BB /* DMCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800483F3214C52F200D4C0BB /* DMCustomView.swift */; };
+		8091C835214B2B02006DDD75 /* DMParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091C831214B2B01006DDD75 /* DMParallaxViewController.swift */; };
 		8091C836214B2B02006DDD75 /* DMWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091C832214B2B01006DDD75 /* DMWebViewController.swift */; };
 		8091C837214B2B02006DDD75 /* DMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091C833214B2B01006DDD75 /* DMTableViewController.swift */; };
 		8091C838214B2B02006DDD75 /* DMTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091C834214B2B02006DDD75 /* DMTextViewController.swift */; };
@@ -38,8 +40,12 @@
 		14730506068A09C6ADF31CB8 /* Pods_DMSegmentedPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMSegmentedPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A9F3D510C071C2319C33D0 /* Pods-DMSegmentedPagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMSegmentedPagerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMSegmentedPagerExample/Pods-DMSegmentedPagerExample.release.xcconfig"; sourceTree = "<group>"; };
 		4A3320AB5218FCBEDF85FF81 /* Pods-DMSegmentedPager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMSegmentedPager.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMSegmentedPager/Pods-DMSegmentedPager.release.xcconfig"; sourceTree = "<group>"; };
+		800483EF214C4D4100D4C0BB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		800483F0214C4D4400D4C0BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		800483F1214C504D00D4C0BB /* DMSimpleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSimpleController.swift; sourceTree = "<group>"; };
+		800483F3214C52F200D4C0BB /* DMCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCustomView.swift; sourceTree = "<group>"; };
 		8091C830214B2AF1006DDD75 /* LongText.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LongText.txt; sourceTree = "<group>"; };
-		8091C831214B2B01006DDD75 /* DMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMViewController.swift; sourceTree = "<group>"; };
+		8091C831214B2B01006DDD75 /* DMParallaxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMParallaxViewController.swift; sourceTree = "<group>"; };
 		8091C832214B2B01006DDD75 /* DMWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMWebViewController.swift; sourceTree = "<group>"; };
 		8091C833214B2B01006DDD75 /* DMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTableViewController.swift; sourceTree = "<group>"; };
 		8091C834214B2B02006DDD75 /* DMTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTextViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		800483EE214C4D1900D4C0BB /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				B63DFCF521472CE000FF570C /* DMSegmentedPager.podspec */,
+				800483EF214C4D4100D4C0BB /* LICENSE */,
+				800483F0214C4D4400D4C0BB /* README.md */,
+			);
+			name = Metadata;
+			sourceTree = "<group>";
+		};
 		88B60329B3937D4E2A12F837 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +120,7 @@
 		B63DFCDE21472C7200FF570C = {
 			isa = PBXGroup;
 			children = (
-				B63DFCF521472CE000FF570C /* DMSegmentedPager.podspec */,
+				800483EE214C4D1900D4C0BB /* Metadata */,
 				B63DFCEA21472C7200FF570C /* DMSegmentedPager */,
 				B63DFCFC21472EE000FF570C /* DMSegmentedPagerExample */,
 				B63DFCE921472C7200FF570C /* Products */,
@@ -138,9 +154,11 @@
 			isa = PBXGroup;
 			children = (
 				B63DFCFD21472EE000FF570C /* AppDelegate.swift */,
+				800483F1214C504D00D4C0BB /* DMSimpleController.swift */,
+				8091C831214B2B01006DDD75 /* DMParallaxViewController.swift */,
+				800483F3214C52F200D4C0BB /* DMCustomView.swift */,
 				8091C833214B2B01006DDD75 /* DMTableViewController.swift */,
 				8091C834214B2B02006DDD75 /* DMTextViewController.swift */,
-				8091C831214B2B01006DDD75 /* DMViewController.swift */,
 				8091C832214B2B01006DDD75 /* DMWebViewController.swift */,
 				B63DFD0121472EE000FF570C /* Main.storyboard */,
 				B63DFD0421472EE700FF570C /* Assets.xcassets */,
@@ -339,11 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800483F2214C504D00D4C0BB /* DMSimpleController.swift in Sources */,
 				8091C836214B2B02006DDD75 /* DMWebViewController.swift in Sources */,
-				8091C835214B2B02006DDD75 /* DMViewController.swift in Sources */,
+				8091C835214B2B02006DDD75 /* DMParallaxViewController.swift in Sources */,
 				8091C838214B2B02006DDD75 /* DMTextViewController.swift in Sources */,
 				8091C837214B2B02006DDD75 /* DMTableViewController.swift in Sources */,
 				B63DFCFE21472EE000FF570C /* AppDelegate.swift in Sources */,
+				800483F4214C52F200D4C0BB /* DMCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
