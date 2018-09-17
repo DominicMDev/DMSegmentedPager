@@ -43,7 +43,7 @@ class DMSimpleViewController: DMSegmentedPagerController {
     }
     
     func segmentedPager(_ segmentedPager: DMSegmentedPager, didScrollWith parallaxHeader: DMParallaxHeader) {
-        print("progress \(parallaxHeader.progress)")
+//        print("progress \(parallaxHeader.progress)")
     }
     
 }

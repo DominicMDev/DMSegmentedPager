@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import DMPagerView
-import DMParallaxHeader
-import DMSegmentedControl
+@_exported import DMPagerView
+@_exported import DMParallaxHeader
+@_exported import DMSegmentedControl
 
 public enum DMSegmentedControlPosition: Int {
     case top, bottom, topOver
@@ -22,7 +22,7 @@ open class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate, 
     var _toolbar: UIToolbar!
     var _pager: DMPagerView!
     
-    var contentView: DMScrollView {
+    public var contentView: DMScrollView {
         if _contentView == nil  {
             _contentView = DMScrollView(frame: .zero)
             _contentView.delegate = self
@@ -48,7 +48,7 @@ open class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate, 
         return _toolbar
     }
     
-    public var pager: DMPagerView {//TODO: Import and use DMPagerView
+    public var pager: DMPagerView {
         if _pager == nil {
             _pager = DMPagerView(frame: frame)
             _pager.delegate = self
@@ -210,6 +210,11 @@ open class DMSegmentedPager: UIView, UIScrollViewDelegate, DMPagerViewDelegate, 
         segmentedControl.setNeedsDisplay()
         
         pager.reloadData()
+    }
+    
+    public func scrollToBottom(animated: Bool = true) {
+        let bottom = contentView.contentSize.height - contentView.bounds.size.height
+        contentView.setContentOffset(CGPoint(x: 0, y: bottom), animated: animated)
     }
     
     public func scrollToTop(animated: Bool = false) {

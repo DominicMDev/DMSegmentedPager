@@ -37,6 +37,7 @@ class ScrollView: UIScrollView {
     
 }
 
+public typealias SelectedIndexTappedBlock = (() -> Void)
 public typealias IndexChangeBlock = ((_ index: Int) -> Void)
 public typealias DMTitleFormatterBlock = ((_ segmentedControl: DMSegmentedControl, _ title: String, _ index: Int, _ selected: Bool) -> NSAttributedString)
 
@@ -48,6 +49,7 @@ open class DMSegmentedControl: UIControl {
     private var segmentWidth: CGFloat = 0
     private var segmentWidthsArray = [CGFloat]()
     private var scrollView: ScrollView = ScrollView()
+    private var touchesMoved: Bool = false
     
     public var sectionTitles = [String]() {
         didSet {
@@ -64,6 +66,9 @@ open class DMSegmentedControl: UIControl {
     }
     
     public var sectionSelectedImages = [UIImage]()
+    
+    /// Provide a block to be executed when index is tapped while already selected.
+    public var selectedIndexTappedBlock: SelectedIndexTappedBlock = {}
     
     /// Provide a block to be executed when selected index is changed.
     /// Alternativly, you could use `addTarget:action:forControlEvents:`
@@ -107,20 +112,20 @@ open class DMSegmentedControl: UIControl {
         }
     }
     
-    /// Specifies the style of the selection indicator. Default is `DMSegmentedControlSelectionStyle.textWidthStripe`
+    /// Specifies the style of the selection indicator. Default is `.textWidthStripe`
     public var selectionStyle: DMSegmentedControlSelectionStyle = .textWidthStripe
     
-    /// Specifies the style of the segment's width. Default is `DMSegmentedControlSegmentWidthStyle.fixed`
+    /// Specifies the style of the segment's width. Default is `.dynamic`
     ///
-    /// - Note: Forces to `.fixed` when `self.type` is `DMSegmentedControlType.images`.
-    public var segmentWidthStyle: DMSegmentedControlSegmentWidthStyle = .fixed {
+    /// - Note: Forces to `.fixed` when `self.type` is `.images`.
+    public var segmentWidthStyle: DMSegmentedControlSegmentWidthStyle = .dynamic {
         didSet {
             if self.type == .images { segmentWidthStyle = .fixed }
         }
     }
     
-    /// Specifies the location of the selection indicator. Default is `.up`
-    public var selectionIndicatorLocation: DMSegmentedControlSelectionIndicatorLocation = .up {
+    /// Specifies the location of the selection indicator. Default is `.down`
+    public var selectionIndicatorLocation: DMSegmentedControlSelectionIndicatorLocation = .down {
         didSet {
             if selectionIndicatorLocation == .none { selectionIndicatorHeight = 0.0 }
         }
@@ -154,14 +159,16 @@ open class DMSegmentedControl: UIControl {
     /// Default is `false`. Set to `true` to show a vertical divider between the segments.
     public var isVerticalDividerEnabled: Bool = false
     
+    public var cancelTouchesOnMovement: Bool = false
+    
     public var shouldStretchSegmentsToScreenSize: Bool = true
     
     /// Index of the currently selected segment.
     public var selectedSegmentIndex: Int = 0
     
     /// Height of the selection indicator. Only effective when `self.selectionStyle` is
-    /// either `.textWidthStripe` or `.fullWidthStripe`. Default is 5.0
-    public var selectionIndicatorHeight: CGFloat = 5.0
+    /// either `.textWidthStripe` or `.fullWidthStripe`. Default is 2.0
+    public var selectionIndicatorHeight: CGFloat = 2.0
     
     /// Edge insets for the selection indicator.
     ///
@@ -226,9 +233,9 @@ open class DMSegmentedControl: UIControl {
         self.selectionIndicatorArrowLayer = CALayer(layer: layer)
         self.selectionIndicatorStripLayer = CALayer(layer: layer)
         self.selectionIndicatorBoxLayer = CALayer(layer: layer)
-        self.selectionIndicatorBoxLayer.opacity = Float(self.selectionIndicatorBoxOpacity);
-        self.selectionIndicatorBoxLayer.borderWidth = 1.0;
-        self.selectionIndicatorBoxOpacity = 0.2;
+        self.selectionIndicatorBoxLayer.opacity = Float(self.selectionIndicatorBoxOpacity)
+        self.selectionIndicatorBoxLayer.borderWidth = 1.0
+        self.selectionIndicatorBoxOpacity = 0.2
         
         self.contentMode = .redraw
     }
@@ -266,7 +273,7 @@ open class DMSegmentedControl: UIControl {
             var titleAttrs = selected ? resultingSelectedTitleTextAttributes : resultingTitleTextAttributes
             size = title.size(withAttributes: titleAttrs)
             let font = titleAttrs[.font] as! UIFont
-            size = CGSize(width: ceil(size.width), height: ceil(size.height-font.descender));
+            size = CGSize(width: ceil(size.width), height: ceil(size.height-font.descender))
         } else if let titleFormatter = self.titleFormatter {
             size = titleFormatter(self, title, index, selected).size()
         }
@@ -339,7 +346,7 @@ open class DMSegmentedControl: UIControl {
             titleLayer.frame = rects.rect
             titleLayer.alignmentMode = kCAAlignmentCenter
             if #available(*, iOS 10.0) {
-                titleLayer.truncationMode = kCATruncationEnd;
+                titleLayer.truncationMode = kCATruncationEnd
             }
             titleLayer.string = attributedTitle(at: idx)
             titleLayer.contentsScale = UIScreen.main.scale
@@ -522,7 +529,7 @@ open class DMSegmentedControl: UIControl {
                 imageXOffset = xOffset
                 textXOffset = imageXOffset + imageSize.width + textImageSpacing
             } else {
-                textXOffset = xOffset;
+                textXOffset = xOffset
                 imageXOffset = textXOffset + stringSize.width + textImageSpacing
             }
         } else {
@@ -592,7 +599,7 @@ open class DMSegmentedControl: UIControl {
             p1 = CGPoint(x: selectionIndicatorArrowLayer.bounds.size.width / 2, y: 0)
             p2 = CGPoint(x: 0, y: selectionIndicatorArrowLayer.bounds.size.height)
             p3 = CGPoint(x: selectionIndicatorArrowLayer.bounds.size.width,
-                         y: selectionIndicatorArrowLayer.bounds.size.height);
+                         y: selectionIndicatorArrowLayer.bounds.size.height)
         case .up:
             p1 = CGPoint(x: selectionIndicatorArrowLayer.bounds.size.width / 2,
                          y: selectionIndicatorArrowLayer.bounds.size.height)
@@ -652,7 +659,7 @@ open class DMSegmentedControl: UIControl {
                 let widthToEndOfSelectedSegment = (segmentWidth * CGFloat(selectedSegmentIndex)) + segmentWidth
                 let widthToStartOfSelectedIndex = (segmentWidth * CGFloat(selectedSegmentIndex))
                 
-                let x = ((widthToEndOfSelectedSegment - widthToStartOfSelectedIndex) / 2) + (widthToStartOfSelectedIndex - sectionWidth / 2);
+                let x = ((widthToEndOfSelectedSegment - widthToStartOfSelectedIndex) / 2) + (widthToStartOfSelectedIndex - sectionWidth / 2)
                 return CGRect(x: x + selectionIndicatorEdgeInsets.left, y: indicatorYOffset,
                               width: sectionWidth - selectionIndicatorEdgeInsets.right, height: selectionIndicatorHeight)
             } else {
@@ -797,14 +804,19 @@ open class DMSegmentedControl: UIControl {
     
     // MARK: - Touch
     
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if cancelTouchesOnMovement { touchesMoved = true }
+    }
+    
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
+        guard let touch = touches.first, !touchesMoved else { return (touchesMoved = false) }
         let touchLocation = touch.location(in: self)
         
         let enlargeRect = CGRect(x: bounds.origin.x - enlargeEdgeInset.left,
                                  y: bounds.origin.y - enlargeEdgeInset.top,
                                  width: bounds.size.width + enlargeEdgeInset.left + enlargeEdgeInset.right,
-                                 height: bounds.size.height + enlargeEdgeInset.top + enlargeEdgeInset.bottom);
+                                 height: bounds.size.height + enlargeEdgeInset.top + enlargeEdgeInset.bottom)
         
         if enlargeRect.contains(touchLocation) {
             var segment: Int = 0
@@ -827,7 +839,8 @@ open class DMSegmentedControl: UIControl {
             default: sectionsCount = sectionTitles.count
             }
             
-            if segment != selectedSegmentIndex && segment < sectionsCount && isTouchEnabled {
+            guard segment != selectedSegmentIndex else { return selectedIndexTappedBlock() }
+            if segment < sectionsCount && isTouchEnabled {
                 setSelectedSegmentIndex(segment, animated: shouldAnimateUserSelection, notify: true)
             }
         }
@@ -933,9 +946,9 @@ open class DMSegmentedControl: UIControl {
     }
     
     private func moveSelectionIndicators(animated: Bool) {
-        selectionIndicatorArrowLayer.actions = nil;
-        selectionIndicatorStripLayer.actions = nil;
-        selectionIndicatorBoxLayer.actions = nil;
+        selectionIndicatorArrowLayer.actions = nil
+        selectionIndicatorStripLayer.actions = nil
+        selectionIndicatorBoxLayer.actions = nil
         
         CATransaction.begin()
         CATransaction.setAnimationDuration(animated ? 0.15: 0)

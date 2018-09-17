@@ -152,7 +152,6 @@ open class DMScrollView: UIScrollView, UIGestureRecognizerDelegate {
         observedViews.removeAll()
     }
     
-    // TODO: Figure out if this would work for both `DMParallaxScrollView` and `UIScrollView`
     func scrollView(_ scrollView: UIScrollView, setContentOffset offset: CGPoint) {
         isObserving = false
         scrollView.contentOffset = offset

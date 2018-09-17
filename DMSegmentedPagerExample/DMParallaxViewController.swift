@@ -54,7 +54,7 @@ class DMParallaxViewController: DMSegmentedPagerController, UITableViewDelegate,
     }
     
     func segmentedPager(_ segmentedPager: DMSegmentedPager, didScrollWith parallaxHeader: DMParallaxHeader) {
-        print("progress \(parallaxHeader.progress)")
+//        print("progress \(parallaxHeader.progress)")
     }
     
     override func numberOfPages(in segmentedPager: DMSegmentedPager) -> Int {
