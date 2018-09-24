@@ -13,121 +13,74 @@ import UIKit
 extension DMPagerView {
     
     @objc open func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidScroll(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidScroll!(scrollView)
-        }
+        delegate?.scrollViewDidScroll?(scrollView)
     }
     
     @objc open func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidZoom(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidZoom!(scrollView)
-        }
+        delegate?.scrollViewDidZoom?(scrollView)
     }
     
     @objc open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewWillBeginDragging(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewWillBeginDragging!(scrollView)
-        }
+        delegate?.scrollViewWillBeginDragging?(scrollView)
     }
     
     @objc open func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                          withVelocity velocity: CGPoint,
-                                          targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+                                              withVelocity velocity: CGPoint,
+                                              targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let position  = targetContentOffset.pointee.x
         let width     = scrollView.bounds.width
         
         let index = Int(position / width)
         willMovePage(to: index)
         
-        let selector = #selector(UIScrollViewDelegate.scrollViewWillEndDragging(_:withVelocity:targetContentOffset:))
-        if objectRespondsToSelector(delegate, selector: selector){
-            delegate!.scrollViewWillEndDragging!(scrollView,
-                                                 withVelocity: velocity,
-                                                 targetContentOffset: targetContentOffset)
-        }
+        delegate?.scrollViewWillEndDragging?(scrollView,
+                                             withVelocity: velocity,
+                                             targetContentOffset: targetContentOffset)
     }
     
     @objc open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidEndDragging(_:willDecelerate:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidEndDragging!(scrollView, willDecelerate: decelerate)
-        }
+        delegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
     
     @objc open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewWillBeginDecelerating(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewWillBeginDecelerating!(scrollView)
-        }
+        delegate?.scrollViewWillBeginDecelerating?(scrollView)
     }
     
     @objc open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         self.index = index
         didMovePage(to: index)
-        
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidEndDecelerating(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidEndDecelerating!(scrollView)
-        }
+        delegate?.scrollViewDidEndDecelerating?(scrollView)
     }
     
     @objc open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         didMovePage(to: index)
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidEndScrollingAnimation(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidEndScrollingAnimation!(scrollView)
-        }
+        delegate?.scrollViewDidEndScrollingAnimation?(scrollView)
     }
     
     @objc open func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        let selector = #selector(UIScrollViewDelegate.viewForZooming(in:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            return delegate!.viewForZooming!(in: scrollView)
-        } else {
-            return nil
-        }
+        return delegate?.viewForZooming?(in: scrollView)
     }
     
     @objc open func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewWillBeginZooming(_:with:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewWillBeginZooming!(scrollView, with: view)
-        }
+        delegate?.scrollViewWillBeginZooming?(scrollView, with: view)
     }
     
     @objc open func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidEndZooming(_:with:atScale:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidEndZooming!(scrollView, with: view, atScale: scale)
-        }
+        delegate?.scrollViewDidEndZooming?(scrollView, with: view, atScale: scale)
     }
     
     @objc open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-        let selector = #selector(UIScrollViewDelegate.scrollViewShouldScrollToTop(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            return delegate!.scrollViewShouldScrollToTop!(scrollView)
-        } else {
-            return scrollView.scrollsToTop
-        }
+        return delegate?.scrollViewShouldScrollToTop?(scrollView) ?? scrollView.scrollsToTop
     }
     
     @objc open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidScrollToTop(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidScrollToTop!(scrollView)
-        }
+        delegate?.scrollViewDidScrollToTop?(scrollView)
     }
     
     @available(iOS 11.0, *)
     @objc open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
-        let selector = #selector(UIScrollViewDelegate.scrollViewDidChangeAdjustedContentInset(_:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            delegate!.scrollViewDidChangeAdjustedContentInset!(scrollView)
-        }
+        delegate?.scrollViewDidChangeAdjustedContentInset?(scrollView)
     }
     
 }

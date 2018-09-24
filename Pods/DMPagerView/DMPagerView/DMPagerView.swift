@@ -17,7 +17,7 @@ open class DMPagerView: UIView, UIScrollViewDelegate {
      *  MARK: - Instance Properties - Internal
      */
     
-    var scrollView: UIScrollView
+    public internal(set) var scrollView: UIScrollView
     
     var pages = [Int : UIView]()
     
@@ -264,21 +264,14 @@ open class DMPagerView: UIView, UIScrollViewDelegate {
     
     internal func willMovePage(to index: Int) {
         loadPage(at: index)
-        
-        let selector =  #selector(DMPagerViewDelegate.pagerView(_:willMoveToPage:at:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            let page = pages[index]!
-            delegate!.pagerView!(self, willMoveToPage: page, at: index)
-        }
+        let page = pages[index]!
+        delegate?.pagerView?(self, willMoveToPage: page, at: index)
     }
     
     internal func didMovePage(to index: Int) {
-        let selector =  #selector(DMPagerViewDelegate.pagerView(_:didMoveToPage:at:))
-        if objectRespondsToSelector(delegate, selector: selector) {
-            let page = pages[index]!
-            delegate!.pagerView!(self, didMoveToPage: page, at: index)
-        }
-        unloadHiddenPages()
+        defer { unloadHiddenPages() }
+        guard let page = pages[index] else { return }
+        delegate?.pagerView?(self, didMoveToPage: page, at: index)
     }
     
     private func loadPage(at index: Int) {
@@ -292,10 +285,7 @@ open class DMPagerView: UIView, UIScrollViewDelegate {
             frame.origin = CGPoint(x: frame.width * CGFloat(index), y: 0)
             page.frame = frame
             
-            let selector =  #selector(DMPagerViewDelegate.pagerView(_:willDisplayPage:at:))
-            if objectRespondsToSelector(delegate, selector: selector) {
-                delegate!.pagerView!(self, willDisplayPage: page, at: index)
-            }
+            delegate?.pagerView?(self, willDisplayPage: page, at: index)
             
             scrollView.addSubview(page)
             scrollView.setNeedsLayout()
@@ -323,11 +313,7 @@ open class DMPagerView: UIView, UIScrollViewDelegate {
                 toUnload.append(index)
                 
                 if page.reuseIdentifier != nil { reuseQueue.append(page) }
-                
-                let selector =  #selector(DMPagerViewDelegate.pagerView(_:didEndDisplayingPage:at:))
-                if objectRespondsToSelector(delegate, selector: selector) {
-                    delegate!.pagerView!(self, didEndDisplayingPage: page, at: index)
-                }
+                delegate?.pagerView?(self, didEndDisplayingPage: page, at: index)
             }
         }
         pages.removeValues(forKeys: toUnload)

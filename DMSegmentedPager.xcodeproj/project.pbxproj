@@ -40,7 +40,7 @@
 		14730506068A09C6ADF31CB8 /* Pods_DMSegmentedPager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMSegmentedPager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A9F3D510C071C2319C33D0 /* Pods-DMSegmentedPagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMSegmentedPagerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMSegmentedPagerExample/Pods-DMSegmentedPagerExample.release.xcconfig"; sourceTree = "<group>"; };
 		4A3320AB5218FCBEDF85FF81 /* Pods-DMSegmentedPager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMSegmentedPager.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMSegmentedPager/Pods-DMSegmentedPager.release.xcconfig"; sourceTree = "<group>"; };
-		800483EF214C4D4100D4C0BB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		800483EF214C4D4100D4C0BB /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		800483F0214C4D4400D4C0BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		800483F1214C504D00D4C0BB /* DMSimpleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSimpleController.swift; sourceTree = "<group>"; };
 		800483F3214C52F200D4C0BB /* DMCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCustomView.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B63DFCF521472CE000FF570C /* DMSegmentedPager.podspec */,
-				800483EF214C4D4100D4C0BB /* LICENSE */,
+				800483EF214C4D4100D4C0BB /* LICENSE.md */,
 				800483F0214C4D4400D4C0BB /* README.md */,
 			);
 			name = Metadata;
@@ -449,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -506,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -580,6 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 584E8BNX6Z;
 				INFOPLIST_FILE = DMSegmentedPagerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 584E8BNX6Z;
 				INFOPLIST_FILE = DMSegmentedPagerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

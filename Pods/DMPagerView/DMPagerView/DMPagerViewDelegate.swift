@@ -71,14 +71,14 @@ import Foundation
      Asks the data source for a view to insert in a particular page of the pager.
      
      - Parameter pagerView: The pager-view object that is requesting the view.
-     - Parameter index:     An index number identifying a page in segmented-pager.
+     - Parameter index:     An index number identifying a page in pager-view.
      - Returns: An object inheriting from UIView that the pager can use for the specified page.
      */
     @objc func pagerView(_ pagerView: DMPagerView, viewForPageAt index: Int) -> UIView
 }
 
 /**
- The DMSegmentedPager's data source object may adopt the DMSegmentedPagerControllerDataSource protocol in order to use the DMSegmentedPagerController with child UIViewController.
+ The `DMPagerView`'s data source object may adopt the `DMPagerViewControllerDataSource` protocol in order to use the `DMPagerViewController` with child `UIViewController`.
  */
 @objc public protocol DMPagerViewControllerDataSource: DMPagerViewDataSource {
     

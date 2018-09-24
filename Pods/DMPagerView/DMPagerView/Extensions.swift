@@ -48,15 +48,6 @@ public extension UIView {
     
 }
 
-// MARK: - NSObjectProtocol+ObjectRespondsToSelector
-extension NSObjectProtocol {
-    func objectRespondsToSelector(_ object: NSObjectProtocol?, selector: Selector) -> Bool {
-        guard let _object = object else { return false }
-        return _object.responds(to: selector)
-    }
-}
-
-
 // MARK: - UIViewController(color: UIColor)
 extension UIViewController {
     convenience init(color: UIColor) {

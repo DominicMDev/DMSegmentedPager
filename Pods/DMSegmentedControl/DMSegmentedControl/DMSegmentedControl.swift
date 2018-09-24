@@ -869,6 +869,7 @@ open class DMSegmentedControl: UIControl {
             
             selectedSegmentOffset = (frame.height / 2) - (segmentWidth / 2)
         } else {
+            if segmentWidthsArray.isEmpty { updateSegmentsRects() }
             var i = 0
             var offsetter: CGFloat = 0
             for width in segmentWidthsArray {

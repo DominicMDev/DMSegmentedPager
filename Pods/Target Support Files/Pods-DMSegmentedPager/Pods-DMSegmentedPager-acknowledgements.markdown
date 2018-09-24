@@ -3,6 +3,10 @@ This application makes use of the following third party libraries:
 
 ## DMPagerView
 
+# License
+
+## MIT License
+
 Copyright (c) 2016 Maxime Epain <maime.epain@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,6 +27,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+# License
+
+## MIT License
 
 Copyright (c) 2018 Dominic Miller <dominicmdev@gmail.com>
 
@@ -47,6 +55,10 @@ THE SOFTWARE.
 
 ## DMParallaxHeader
 
+# License
+
+## MIT License
+
 Copyright (c) 2017 Maxime Epain <maxime.epain@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -67,6 +79,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+# License
+
+## MIT License
 
 Copyright (c) 2018 Dominic Miller <dominicmdev@gmail.com>
 
