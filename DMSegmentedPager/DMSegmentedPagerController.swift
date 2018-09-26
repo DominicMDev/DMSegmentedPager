@@ -48,9 +48,9 @@ open class DMSegmentedPagerController: UIViewController, DMSegmentedPagerDelegat
     
     open func segmentedPager(_ segmentedPager: DMSegmentedPager, viewForPageAt index: Int) -> UIView {
         let viewController = self.segmentedPager(segmentedPager, viewControllerForPageAt: index)
-        viewController.willMove(toParentViewController: self)
-        addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
+        viewController.willMove(toParent: self)
+        addChild(viewController)
+        viewController.didMove(toParent: self)
         return viewController.view
     }
     
