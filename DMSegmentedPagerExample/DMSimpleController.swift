@@ -18,8 +18,8 @@ class DMSimpleViewController: DMSegmentedPagerController {
         // Segmented Control customization
         segmentedPager.segmentedControl.selectionIndicatorLocation = .down
         segmentedPager.segmentedControl.backgroundColor = .white
-        segmentedPager.segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.black]
-        segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.orange]
+        segmentedPager.segmentedControl.titleTextAttributes = [.foregroundColor : UIColor.black]
+        segmentedPager.segmentedControl.selectedTitleTextAttributes = [.foregroundColor : UIColor.orange]
         segmentedPager.segmentedControl.selectionStyle = .fullWidthStripe
         segmentedPager.segmentedControl.selectionIndicatorColor = .orange
         
@@ -34,7 +34,8 @@ class DMSimpleViewController: DMSegmentedPagerController {
     }
     
     override func viewWillLayoutSubviews() {
-        segmentedPager.frame = CGRect(x: 0, y: 20, width: view.frame.width, height: view.frame.height - 20)
+        let inset = view.safeAreaInsets.top
+        segmentedPager.frame = CGRect(x: 0, y: inset, width: view.frame.width, height: view.frame.height - inset)
         super.viewWillLayoutSubviews()
     }
     

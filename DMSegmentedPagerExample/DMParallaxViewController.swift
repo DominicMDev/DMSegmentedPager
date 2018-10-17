@@ -37,8 +37,8 @@ class DMParallaxViewController: DMSegmentedPagerController, UITableViewDelegate,
         // Segmented Control customization
         segmentedPager.segmentedControl.selectionIndicatorLocation = .down
         segmentedPager.segmentedControl.backgroundColor = .white
-        segmentedPager.segmentedControl.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.black]
-        segmentedPager.segmentedControl.selectedTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.orange]
+        segmentedPager.segmentedControl.titleTextAttributes = [.foregroundColor : UIColor.black]
+        segmentedPager.segmentedControl.selectedTitleTextAttributes = [.foregroundColor : UIColor.orange]
         segmentedPager.segmentedControl.selectionStyle = .fullWidthStripe
         segmentedPager.segmentedControl.selectionIndicatorColor = .orange
         

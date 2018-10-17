@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "248A26B255417C66E99D69718C2D8751"
+               BlueprintIdentifier = "51CA95DDC5D912274EEE66A80A5D79BD"
                BlueprintName = "DMPagerView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "DMPagerView.framework">

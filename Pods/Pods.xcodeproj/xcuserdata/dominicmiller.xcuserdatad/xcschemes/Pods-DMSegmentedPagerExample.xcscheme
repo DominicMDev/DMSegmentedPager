@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96479FED26146C7E0EFAD72595C4CEF1"
+               BlueprintIdentifier = "E6222B79CBEF5FB0D3474A5B22BBA661"
                BuildableName = "Pods_DMSegmentedPagerExample.framework"
                BlueprintName = "Pods-DMSegmentedPagerExample"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96479FED26146C7E0EFAD72595C4CEF1"
+            BlueprintIdentifier = "E6222B79CBEF5FB0D3474A5B22BBA661"
             BuildableName = "Pods_DMSegmentedPagerExample.framework"
             BlueprintName = "Pods-DMSegmentedPagerExample"
             ReferencedContainer = "container:Pods.xcodeproj">
