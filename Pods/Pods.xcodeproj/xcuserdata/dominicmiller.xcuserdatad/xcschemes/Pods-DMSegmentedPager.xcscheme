@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A1275841BC1E5781792A5AA7A5A7627"
+               BlueprintIdentifier = "9B7305E7E6D19774B36ACECA313DAA07"
                BuildableName = "Pods_DMSegmentedPager.framework"
                BlueprintName = "Pods-DMSegmentedPager"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A1275841BC1E5781792A5AA7A5A7627"
+            BlueprintIdentifier = "9B7305E7E6D19774B36ACECA313DAA07"
             BuildableName = "Pods_DMSegmentedPager.framework"
             BlueprintName = "Pods-DMSegmentedPager"
             ReferencedContainer = "container:Pods.xcodeproj">

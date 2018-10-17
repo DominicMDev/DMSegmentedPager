@@ -34,7 +34,8 @@ class DMSimpleViewController: DMSegmentedPagerController {
     }
     
     override func viewWillLayoutSubviews() {
-        segmentedPager.frame = CGRect(x: 0, y: 20, width: view.frame.width, height: view.frame.height - 20)
+        let inset = view.safeAreaInsets.top
+        segmentedPager.frame = CGRect(x: 0, y: inset, width: view.frame.width, height: view.frame.height - inset)
         super.viewWillLayoutSubviews()
     }
     

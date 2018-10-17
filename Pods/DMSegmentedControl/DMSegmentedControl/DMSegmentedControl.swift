@@ -79,11 +79,11 @@ open class DMSegmentedControl: UIControl {
     public var titleFormatter: DMTitleFormatterBlock? = nil
     
     /// Text attributes to apply to item title text.
-    @objc public dynamic var titleTextAttributes = [NSAttributedStringKey : Any]()
+    @objc public dynamic var titleTextAttributes = [NSAttributedString.Key : Any]()
     
     /// Text attributes to apply to selected item title text.
     /// Attributes not set in this dictionary are inherited from `titleTextAttributes`.
-    @objc public dynamic var selectedTitleTextAttributes = [NSAttributedStringKey : Any]()
+    @objc public dynamic var selectedTitleTextAttributes = [NSAttributedString.Key : Any]()
     
     /// Color for the selection indicator stripe. Default is `red:0.204, green:0.710, blue:0.898`
     @objc public dynamic var selectionIndicatorColor: UIColor = UIColor(red: 0.204, green: 0.710, blue: 0.898, alpha: 1)
@@ -344,9 +344,9 @@ open class DMSegmentedControl: UIControl {
             
             let titleLayer = CATextLayer(layer: layer)
             titleLayer.frame = rects.rect
-            titleLayer.alignmentMode = kCAAlignmentCenter
+            titleLayer.alignmentMode = .center
             if #available(*, iOS 10.0) {
-                titleLayer.truncationMode = kCATruncationEnd
+                titleLayer.truncationMode = .end
             }
             titleLayer.string = attributedTitle(at: idx)
             titleLayer.contentsScale = UIScreen.main.scale
@@ -451,10 +451,10 @@ open class DMSegmentedControl: UIControl {
             
             let titleLayer = CATextLayer(layer: layer)
             titleLayer.frame = rects.textRect
-            titleLayer.alignmentMode = kCAAlignmentCenter
+            titleLayer.alignmentMode = .center
             titleLayer.string = attributedTitle(at: idx)
             if #available(*, iOS 10.0) {
-                titleLayer.truncationMode = kCATruncationEnd
+                titleLayer.truncationMode = .end
             }
             let imageLayer = CALayer(layer: layer)
             imageLayer.frame = rects.imageRect
@@ -953,7 +953,7 @@ open class DMSegmentedControl: UIControl {
         
         CATransaction.begin()
         CATransaction.setAnimationDuration(animated ? 0.15: 0)
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear))
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: .linear))
         setArrowFrame()
         selectionIndicatorBoxLayer.frame = frameForSelectionIndicator()
         selectionIndicatorStripLayer.frame = frameForSelectionIndicator()
@@ -963,8 +963,8 @@ open class DMSegmentedControl: UIControl {
     
     // MARK: - Styling Support
     
-    var resultingTitleTextAttributes: [NSAttributedStringKey : Any] {
-        var resultingAttrs: [NSAttributedStringKey : Any] = [
+    var resultingTitleTextAttributes: [NSAttributedString.Key : Any] {
+        var resultingAttrs: [NSAttributedString.Key : Any] = [
             .font : UIFont.systemFont(ofSize: 19),
             .foregroundColor : UIColor.black
         ]
@@ -973,7 +973,7 @@ open class DMSegmentedControl: UIControl {
         return resultingAttrs
     }
     
-    var resultingSelectedTitleTextAttributes: [NSAttributedStringKey : Any] {
+    var resultingSelectedTitleTextAttributes: [NSAttributedString.Key : Any] {
         var resultingAttrs = resultingTitleTextAttributes
         for (k, v) in selectedTitleTextAttributes { resultingAttrs[k] = v }
         return resultingAttrs

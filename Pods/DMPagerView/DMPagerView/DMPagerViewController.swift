@@ -37,9 +37,9 @@ open class DMPagerViewController: UIViewController, DMPagerViewDelegate, DMPager
     
     open func pagerView(_ pagerView: DMPagerView, viewForPageAt index: Int) -> UIView {
         let viewController = self.pagerView(pagerView, viewControllerForPageAt: index)
-        viewController.willMove(toParentViewController: self)
-        addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
+        viewController.willMove(toParent: self)
+        addChild(viewController)
+        viewController.didMove(toParent: self)
         return viewController.view
     }
     

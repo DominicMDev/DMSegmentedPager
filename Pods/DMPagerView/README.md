@@ -1,7 +1,7 @@
 # DMPagerView
 
 [![Pod Version](http://img.shields.io/cocoapods/v/DMPagerView.svg?style=flat)](http://cocoadocs.org/docsets/DMPagerView)
-![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![Pod License](http://img.shields.io/cocoapods/l/DMPagerView.svg?style=flat)](http://opensource.org/licenses/MIT)
 

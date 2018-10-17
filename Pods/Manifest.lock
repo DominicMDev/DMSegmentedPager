@@ -1,12 +1,12 @@
 PODS:
-  - DMPagerView (1.1.0)
-  - DMParallaxHeader (2.0.0)
-  - DMSegmentedControl (1.1.1)
+  - DMPagerView (1.2.0)
+  - DMParallaxHeader (2.1.0)
+  - DMSegmentedControl (1.2.0)
 
 DEPENDENCIES:
-  - DMPagerView (~> 1.1)
-  - DMParallaxHeader (~> 2.0)
-  - DMSegmentedControl (~> 1.1)
+  - DMPagerView (~> 1.2)
+  - DMParallaxHeader (~> 2.1)
+  - DMSegmentedControl (~> 1.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - DMSegmentedControl
 
 SPEC CHECKSUMS:
-  DMPagerView: 5d1a36e2ab9a00f1ff1bdc4d4d44678eaa6ef054
-  DMParallaxHeader: 65d8c216f1a673e3222e20c4e1a8ccb4463b0ca3
-  DMSegmentedControl: b7b1c4f9a07c4ceba70ad7bf9971acde9738303d
+  DMPagerView: 948391086777652e1e70c04a9c6f6bdf343ec2e3
+  DMParallaxHeader: 9d02c7917b879c1506280c050e3928198e8d700e
+  DMSegmentedControl: 4aa6bfdf348ab7df18dfaf3c9c5ebc91a000bae5
 
-PODFILE CHECKSUM: 1832ae1a45ebc676a62d2b3d50086ec6318cf7fb
+PODFILE CHECKSUM: e7ef0891e5afcb06ed9166659e79a0838b8bebdb
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

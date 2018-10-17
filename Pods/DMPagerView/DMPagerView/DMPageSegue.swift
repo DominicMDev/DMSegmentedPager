@@ -33,10 +33,10 @@ open class DMPageSegue: UIStoryboardSegue {
     }
     
     override open func perform() {
-        destination.willMove(toParentViewController: sourceVC)
-        sourceVC.addChildViewController(destination)
+        destination.willMove(toParent: sourceVC)
+        sourceVC.addChild(destination)
         sourceVC.setPageViewController(destination, at: sourceVC.pageIndex)
-        destination.didMove(toParentViewController: sourceVC)
+        destination.didMove(toParent: sourceVC)
     }
     
 }
